@@ -1,0 +1,90 @@
+/* Ejercicio de Caja */
+.caja {
+    /* Son propiedades especiales en este caso no se aplicaría al cuadro si no al texto hijo que es lo que indica que es    */
+    font-size: 20px;
+    color: red;
+
+    outline: 1px solid red;
+    height: 100px;
+    width: 100px;
+    padding: 50px;
+    border: 5px solid orange;
+    margin: 50px;
+}
+
+/* Ejercicio de Selectores*/
+/* Estructura fuerte que indica "cuál es la ruta hasta la ultima etiqueta" */
+header > nav > a {
+    font-size: 50px;
+}
+/* cuando le ponemos un espacio, indicamos que a esta dentro de aside pero es más general que el anterior  */
+aside a {
+    color: green;
+}
+
+/* compartir propiedades CSS */
+
+h2, .texto-centrado {
+    text-align: center;
+}
+
+h1 {
+color: red;
+}   
+.texto-grande {
+    font-size: 60px;
+    color: blue;
+}
+
+#texto-pequeno {
+    font-size: 10px;
+    color: yellow;
+
+}
+
+/* Estilizar textos */
+
+.alineación {
+/* alineación a la izquierda*/
+/* text-align: left; */
+
+/* Alineación al centro */
+/* text-align: center; */
+
+/* Alineación a la derecha */
+/* text-align: right; */
+
+/* Alineación justificada */
+    text-align: justify;   
+
+}
+
+
+.tamanos { 
+    /* tamaño por defecto */
+    /* font-size: 16px */
+    font-size: 40px;
+}
+
+.decoracion {
+    /* subrayado */
+    /* text-decoration: underline; */
+/* tezto tachado */
+    text-decoration: line-through;
+}
+
+/* al poner unset deshabilita por ejmplo el subrayado en este caso */
+.quitar-subrayado { 
+    text-decoration: unset;
+}
+
+.tranformacion {
+    /* primera letra de cada palabra en mayuscula */
+    /* text-transform: capitalize; */
+
+    /* tranformar todo el texto en mayusculas */
+    /* text-transform: uppercase; */
+
+    /* Tranformar todo en minusculas */
+    text-transform: lowercase;
+}
