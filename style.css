@@ -1,3 +1,10 @@
+body {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
 /* Ejercicio de Caja */
 .caja {
     /* Son propiedades especiales en este caso no se aplicaría al cuadro si no al texto hijo que es lo que indica que es    */
@@ -71,7 +78,9 @@ color: red;
     /* text-decoration: underline; */
 /* tezto tachado */
     text-decoration: line-through;
+   
 }
+
 
 /* al poner unset deshabilita por ejmplo el subrayado en este caso */
 .quitar-subrayado { 
@@ -87,4 +96,58 @@ color: red;
 
     /* Tranformar todo en minusculas */
     text-transform: lowercase;
+}
+
+.espaciado-de-textos {
+    /* Para modificar el espacio entre lineas de texto (interlineado) */
+    line-height: 40px;
+    /* Modifica la distancia entre letras */
+    letter-spacing: 3px;
+    /* Espaciado entre cada palabra */
+    word-spacing: 10px;
+}
+.grosor-letra {
+    /* Grosor de la fuente se puede indicar de 0-900 fr 100 en 100 o se puede en palabras como Bolder, lighter o bold */
+    font-weight: lighter;
+}
+
+.posicion-caja-1, .posicion-caja-2, .posicion-caja-3, .posicion-caja-4 {
+    height: 100px;
+    width: 100px;
+    border: 3px solid blue;
+    margin: 20px;
+}
+
+.caja-padre {
+    position: relative;
+    border: 2px red solid;
+}
+
+.posicion-caja-1 {
+    /* El motivimiento va a ser relativo a su posición original */
+    position: relative;
+    /* left: 50px;
+    bottom: 50px; */
+}
+
+.posicion-caja-2 {
+    /* El elemento pierde su posición */
+    /* Y la podremos mover en relación al elemento padre "rj: caja-padre */
+    position: absolute;
+    border-color: blueviolet;
+    top: 0;
+    right: 0;
+
+}   
+
+.posicion-caja-3 {
+    /* fija la posición de la caja en la pantalla, manteniendose ciempre visible en el viewport */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.posicion-caja-4 {
+    position: sticky;
+    top: 0;
 }
