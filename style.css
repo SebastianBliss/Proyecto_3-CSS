@@ -142,12 +142,51 @@ color: red;
 
 .posicion-caja-3 {
     /* fija la posición de la caja en la pantalla, manteniendose ciempre visible en el viewport */
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
-    right: 0;
+    right: 0; */
 }
 
 .posicion-caja-4 {
-    position: sticky;
-    top: 0;
+ /*    position: sticky;
+    top: 0; */
+}
+
+.perro-imagen {
+    width: 100px;
+}
+
+
+.cuadricula {
+    outline: 1px solid blue;
+    /* hace que queden una bajo otra las imagenes "una sola columna */
+    display: grid;
+    /* Permite poner el nro de columnas y el tamaño de cada una */
+    /* El tamaño podría ponerse en pixeles ej */
+    /* grid-template-columns: 200 200 200; */
+    
+    /* El tamaño podría ponerse en fraccion (fr) */
+    grid-template-columns: 1fr 1fr 1fr;
+/* para elegir el tamaño de las filas */
+    grid-template-rows: 200px 200px 200px 200px;
+    /* Hace que los elementos queden centrados dentro de la columna */ /* podemos elegir entre center (centrado), flex-end (alineado a la derecha al final de la columna), flex-stard(alienado al lado inicial bien sea a la izquierda o arriba si es align) */
+    justify-items: flex-end;
+    align-items: flex-start;
+
+}
+
+.tamano {
+    /* width: 400px; */
+}
+
+.uno {
+    /* Hace que la imagen cubra el espacio que tiene */
+    object-fit: cover;
+    /* al poner 1/2 le estamos indicando que es la primera columna "de la linea 1 a la linea 2" y row 1/4 hace referencia a la linea 1 a la 4 pero de las filas */ 
+    grid-column: 1/3;
+    grid-row: 1/4;
+    height: 100%;
+    /* apodemos alinear también solo a nivel de un elemento */
+    justify-self: flex-start;
+    align-self: center;
 }
