@@ -190,3 +190,82 @@ color: red;
     justify-self: flex-start;
     align-self: center;
 }
+
+.caja-distribucion {
+/* unidad vh -> view heigt */
+/*        vw -> view wight */
+    border: 1px solid blue;
+    /* height: 100vh; */
+    display: flex;
+
+    /* Flex ubica las cajas en una sola fila (una al lado de la otra), a diferencia de grid que las ubica en una sola columna (una bajo la otra) */
+    display: flex;
+    /* genera espacio entre cada una de las cajas de manera que queden las de los extremos pegadas al margen y la otra en el medio */
+    /* justify-content: space-between; */
+/* hace algo muy similar a space between. pero en este caso le crea el mismo espacio a cada caja pero tanto a la izquierda como a la derecha */
+    justify-content: space-around;
+}
+
+.caja-distribucion div {
+    height: 50px;
+    width: 50px;
+    border: 1px solid red;
+    color: aqua;
+}
+
+.boton-animado {
+        /* para que el boton no quede tan pegado a los bordes */
+    padding: 10px;
+    border: none;
+    background-color: rgb(13, 13, 117);
+    color: white;
+
+    /* hace que el boton sea redondeadas las esquinas, si primero hacemos que sea cuadrado poniendole la misma altura y ancho y luego ponerle el border radius hace que quede redondo */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: padding 0.5s, background-color 2s, color 2s;
+}
+
+/* Pseudo clases - Son como clases predefinidas que nos permites tener otras acciones */
+
+/* lo que hace hover es que cuando se pare encima el mouse del boton, cambie de color, cambie el cursor, o similar.  */
+.boton-animado:hover {
+    padding-left: 50px;
+    background-color: rgb(107, 10, 10) ;
+    cursor: help;
+    color: yellow;
+}
+
+.caja-animada {
+    position: relative;
+    left: 0px;
+    margin-top: 20px;
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+
+/* animation nos ayuda a conectar los keyframes de abajo con nuestra caja*/
+/*  */
+/* Se pone el keyframe en este caso "mover-derecha" el tiempo 4s y linear es para que sea lineal, ease-in hace que empiece lento y al final sea mas rapido, infinite hace que continue ejecutandose infitino. y alternative reverse hace que la caja vaya hasta la derecha y se devuelva al principio */
+animation: mover-derecha 4s linear infinite alternate;
+}
+
+/* keyframes para declarar una animación */
+
+@keyframes mover-derecha {
+    0% {
+        top: 0px;
+        left: 0px;
+    }
+
+    50% {
+        top: 50px;
+
+    }
+
+    100% {
+        top: 0;
+        left: 200px;
+        background-color: blueviolet;
+    }
+}
