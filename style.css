@@ -269,3 +269,57 @@ animation: mover-derecha 4s linear infinite alternate;
         background-color: blueviolet;
     }
 }
+
+.transformacion {
+    /* Al poner diplay: block y poner margin: auto, hace que se centre el boton - Las etiquetas inline (se forman a la derecha) por defecto son: Button, input, img, span (Span=es similar a un div, pero espan es para agregar estilos pero a los textos */
+    display: block;
+    margin: auto;
+    transition: transform 1s;
+}
+.transformacion:hover {
+    /* Scale hace que crezca el boton "escalar el elemento" */
+    transform: scale(1.2);
+
+    /* En el caso de rotate para rotar elementos, deg es la unidad que hace referencia a grados básicamente por ejemplo 45deg ó -45deg que sería hacía el lado opuesto */
+    /* transform: rotate(45deg);*/
+ 
+    /* para mover nuestro elemento de forma vertical (primer valor)/horizontal(segundo valor), funciona como un plano cartesiano. positivos arriba ya a la derecha y negativos izquierda y abajo  */
+    /* transform: translate(0px, 10px); */
+}
+
+.titulo-animado {
+    text-align: center;
+    /* forward detiene la animación en el final para que no se reinicie*/
+    animation: aparecer 2s linear forwards;
+
+}
+
+@keyframes aparecer {
+
+from {
+    transform: translate(-1000px, 0px);
+}
+
+to {
+    transform: translate(0px, 0px);
+}
+}
+
+/* Responsive es verificar que nuestra pagina se pueda ajustar a cualquier pantalla */
+.responsive {
+    font-size: 150;
+}
+
+/* media screen verifica que hay una pantalla. y hay que agregarle la validacion desde donde queremos hacer el responsive */
+@media screen and (width < 800px) {
+    .responsive {
+        font-size: 120px;
+    }
+
+@media  screen and (width < 640px) {
+    .responsive {
+        font-size: 100px;
+    }
+}
+    
+}
